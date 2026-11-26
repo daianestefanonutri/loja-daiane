@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daiane Stefano Nutrição</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: premium nutritionist, calm and direct; one link for everything
+   IDEA: a link-in-bio card that opens into a small, well-kept shop
+   PICTURE: the DS monogram crest on deep green, then the real product photos
+   COLOUR and TYPE: brand dark green, cream, gold detail, sage; Playfair Display + DM Sans
+   LAYOUT: green header with name and main buttons, sticky category jumps, product grid, footer */
+:root{color-scheme:light dark;
+--bg:light-dark(#faf8f3,#121a16);--card:light-dark(#ffffff,#1a2520);--ink:light-dark(#1e2b25,#eef1ec);
+--soft:light-dark(#5f6b64,#a8b5ad);--green:#1e4034;--sage:light-dark(#6f8467,#9db592);--gold:#b8860b;
+--sand:light-dark(#f1ece3,#22302a);--line:light-dark(#e6e0d4,#2c3a33)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'DM Sans',system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+.wrap{max-width:1120px;margin:0 auto}
+.pad{padding-inline:max(4vw,14px)}
+.head{background:var(--green);color:#f6f2e8;padding-block:clamp(30px,5vw,56px) clamp(28px,4vw,44px);text-align:center}
+.crest{width:84px;height:84px;margin:0 auto 14px;display:block}
+h1{font:600 clamp(28px,4vw,40px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.role{margin:0 0 4px;font-weight:600;color:#d9c48f;font-size:15px}
+.tag{margin:0 auto 24px;max-width:44ch;color:#cdd8d1;font-size:15.5px}
+.links{display:grid;gap:12px;max-width:520px;margin:0 auto}
+.lk{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;border-radius:14px;text-decoration:none;font-weight:600;font-size:16px;color:#f6f2e8;border:1px solid rgba(246,242,232,.35)}
+.lk.main{background:#f6f2e8;color:var(--green);border-color:#f6f2e8}
+.lk svg{width:22px;height:22px;flex:none}
+.lk:focus-visible,.jump a:focus-visible,.card:focus-visible,.search:focus-visible,.wa:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;gap:10px;align-items:center;padding-block:10px}
+.jump{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1}
+.jump::-webkit-scrollbar{display:none}
+.jump a{flex:none;display:flex;align-items:center;min-height:38px;padding:0 15px;border:1px solid var(--line);border-radius:999px;background:var(--card);text-decoration:none;color:var(--ink);font-weight:600;font-size:14px}
+.jump a.on{background:var(--green);color:#f6f2e8;border-color:var(--green)}
+.search{flex:0 0 170px;min-height:40px;border:1px solid var(--line);border-radius:999px;padding:0 14px;font:16px 'DM Sans';background:var(--card);color:var(--ink)}
+.shop{padding-top:28px}
+.shop>h2{font:600 clamp(26px,3.2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 4px}
+.shop>p{margin:0;color:var(--soft);font-size:15px}
+.sec{padding-top:28px}
+.sec h3{font:500 clamp(21px,2.6vw,26px)/1.15 'Playfair Display',Georgia,serif;margin:0 0 14px;display:flex;align-items:baseline;gap:10px}
+.sec h3 small{font:500 14px 'DM Sans';color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:22px 16px}
+.card{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;border-radius:16px}
+.thumb{background:var(--sand);border-radius:16px;aspect-ratio:1/1;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.card:hover .thumb img{transform:scale(1.03)}
+.card h4{font:600 15px/1.3 'DM Sans';margin:2px 0 0}
+.tip{font-size:14px;line-height:1.45;color:var(--soft);margin:0;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.buy{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;background:var(--green);color:#f6f2e8;font-weight:600;font-size:14px;margin-top:4px}
+.empty{padding:40px 0;text-align:center;color:var(--soft)}
+.note{font-size:13px;color:var(--soft);max-width:760px;margin:44px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+footer{padding-block:18px 28px;font-size:13.5px;color:var(--soft)}
+footer a{color:var(--ink);font-weight:600}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:8px;min-height:52px;padding:0 18px 0 14px;border-radius:999px;background:#1f9d55;color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.wa svg{width:24px;height:24px;flex:none}
+@media(max-width:600px){.search{flex-basis:110px}.grid{grid-template-columns:1fr 1fr;gap:18px 10px}.card h4{font-size:14px}.tip{font-size:13px}.buy{min-height:40px;font-size:13.5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.thumb img{transition:none}.card:hover .thumb img{transform:none}}
+</style>
+</head>
+<body>
+<header class="head"><div class="wrap pad">
+  <svg class="crest" viewBox="0 0 84 84" role="img" aria-label="Monograma DS"><circle cx="42" cy="42" r="40" fill="none" stroke="#b8860b" stroke-width="1.5"/><circle cx="42" cy="42" r="35" fill="none" stroke="#b8860b" stroke-width=".6" opacity=".7"/><text x="42" y="52" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-size="30" font-weight="600" fill="#d9b25a">DS</text></svg>
+  <h1>Daiane Stefano</h1>
+  <p class="role">Nutricionista · CRN-3 96631</p>
+  <p class="tag">Emagrecimento e saúde metabólica com estratégia. Atendimento online e presencial.</p>
+  <nav class="links" aria-label="Links principais">
+    <a class="lk main" href="https://wa.me/5511947046784?text=Ol%C3%A1%2C%20Daiane!%20Quero%20come%C3%A7ar%20meu%20acompanhamento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>Quero começar meu acompanhamento</a>
+    <a class="lk" href="#loja">Ver a loja</a>
+  </nav>
+</div></header>
+
+<div class="bar"><div class="wrap pad">
+  <nav class="jump" id="jump" aria-label="Categorias da loja"></nav>
+</div></div>
+
+<main class="wrap pad">
+  <section class="shop" id="loja">
+    <h2>Facilite sua rotina</h2>
+    <p>Produtos que ajudam a organizar a alimentação no dia a dia. Toque no produto para ir direto à loja.</p>
+    <div id="list"></div>
+  </section>
+  <p class="note">Declaração de conflito de interesses: os produtos desta página têm links de afiliado. Ao comprar por eles, posso receber uma comissão da loja, sem custo adicional para você. Nenhum produto substitui orientação nutricional individual. Preços e disponibilidade são definidos por cada loja e podem mudar.</p>
+</main>
+<footer class="wrap pad">Daiane Stefano Nutrição · <a href="https://consultecalorias.netlify.app" target="_blank" rel="noopener">Consulte calorias</a> · <a href="https://wa.me/5511947046784?text=Ol%C3%A1%2C%20Daiane!%20Quero%20come%C3%A7ar%20meu%20acompanhamento." target="_blank" rel="noopener">WhatsApp (11) 94704-6784</a></footer>
+<a class="wa" href="https://wa.me/5511947046784?text=Ol%C3%A1%2C%20Daiane!%20Vi%20sua%20loja%20e%20queria%20uma%20ajuda." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>Fale comigo</a>
+
+<script>
+{
+const CATS=[
+ {id:'marmita',name:'Marmitas e potes',sub:'Para preparar a semana e manter a geladeira em ordem.'},
+ {id:'levar',name:'Leve com você',sub:'Bolsas térmicas para o trabalho, a faculdade e o treino.'},
+ {id:'cozinha',name:'Cozinha prática',sub:'Utensílios que economizam tempo no preparo.'},
+ {id:'agua',name:'Hidratação',sub:'Garrafas e copos para ter água sempre por perto.'},
+ {id:'supl',name:'Suplementos',sub:'Marcas conhecidas, com rótulo limpo.'}
+];
+/* Para adicionar produto: copie uma linha e troque nome (n), categoria (c), link (u), descrição (t) e ícone (i). */
+const P=[
+ {n:'Kit potes de vidro com divisória',c:'marmita',u:'https://meli.la/1hjigWm',t:'Dois compartimentos e tampa com travas: proteína de um lado, acompanhamento do outro.',i:'box',img:'img/potes-vidro-divisoria.jpg',f:1},
+ {n:'Kit 5 marmitas de vidro com divisória',c:'marmita',u:'https://meli.la/2rfQ4Hm',t:'Cinco marmitas para montar a semana inteira de uma vez, com prato principal e salada separados.',i:'box',img:'img/marmitas-vidro-5.jpg',f:1},
+ {n:'Garrafa térmica Stanley rosa',c:'agua',u:'https://meli.la/1DhA2GR',t:'Tampa que abre com um toque e aço inox que mantém a água gelada por horas.',i:'bottle',img:'img/stanley-rosa.jpg',f:1},
+ {n:'Garrafa térmica com canudo embutido rosa',c:'agua',u:'https://meli.la/1F35hGp',t:'Não vaza, tem canudo embutido e mantém a água gelada por até 24 horas.',i:'bottle',img:'img/garrafa-canudo-rosa.jpg'},
+ {n:'Bolsa térmica Everbags preta',c:'levar',u:'https://meli.la/1bVMyCM',t:'Compacta, com alça de mão e de ombro: leva a marmita e o lanche para o trabalho ou o treino.',i:'bag',img:'img/everbags-preta.jpg'},
+ {n:'Bolsa térmica Usemimeria preta',c:'levar',u:'https://meli.la/295phB3',t:'Visual elegante em material liso, com bolso frontal e alça de ombro. Combina com o escritório.',i:'bag',img:'img/usemimeria-preta.jpg'},
+ {n:'Potinhos de vidro 200ml com tampa',c:'marmita',u:'https://meli.la/25ZJHhm',t:'Tamanho ideal para deixar frutas picadas porcionadas na geladeira, prontas para o lanche.',i:'jar',img:'img/potes-leite-materno.jpg'},
+ {n:'Kit potinhos de vidro 200ml com tampa de rosca',c:'marmita',u:'https://meli.la/2PBhKA5',t:'Vários potinhos graduados para porcionar frutas, iogurte e lanches da semana de uma vez.',i:'jar',img:'img/potes-super-mamae.jpg'},
+ {n:'Creatina monohidratada Nutrify 300g',c:'supl',u:'https://meli.la/12SmE1m',t:'Creatina 100% monohidratada, sem açúcar e sem glúten, em pote de 300g.',i:'jar',img:'img/creatina-nutrify.jpg'},
+ {n:'Creatina monohidratada Nutrify 600g',c:'supl',u:'https://meli.la/1vTzQG2',t:'Creatina pura em pote maior, com 200 porções de 3g. Rende mais por compra.',i:'jar',img:'img/creatina-nutrify-600.jpg'}
+];
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const used=CATS.filter(c=>P.some(x=>x.c===c.id));
+const jump=document.getElementById('jump'),list=document.getElementById('list');
+jump.innerHTML=used.map(c=>`<a href="#${c.id}" data-c="${c.id}">${esc(c.name)}</a>`).join('');
+const card=x=>`<a class="card" href="${esc(x.u)}" target="_blank" rel="noopener sponsored"><div class="thumb"><img src="${esc(x.img)}" alt="${esc(x.n)}" loading="lazy"></div><h4>${esc(x.n)}</h4><p class="tip">${esc(x.t)}</p><span class="buy">Comprar</span></a>`;
+let io;
+const render=()=>{
+ const html=used.map(c=>{
+  const items=P.filter(x=>x.c===c.id);
+  return items.length?`<section class="sec" id="${c.id}"><h3>${esc(c.name)}<small>${items.length}</small></h3><div class="grid">${items.map(card).join('')}</div></section>`:'';
+ }).join('');
+ list.innerHTML=html||'<p class="empty">Nenhum produto encontrado. Tente outra palavra.</p>';
+ if(io)io.disconnect();
+ io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){for(const a of jump.children)a.classList.toggle('on',a.dataset.c===e.target.id);const on=jump.querySelector('.on');if(on)jump.scrollTo({left:on.offsetLeft-14,behavior:'smooth'})}},{rootMargin:'-80px 0px -60% 0px'});
+ list.querySelectorAll('.sec').forEach(s=>io.observe(s));
+};
+render();
+}
+</script>
+</body>
+</html>
