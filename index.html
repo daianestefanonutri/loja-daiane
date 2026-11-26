@@ -5,73 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daiane Stefano Nutrição</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* VOICE: premium nutritionist, calm and direct; one link for everything
-   IDEA: a link-in-bio card that opens into a small, well-kept shop
-   PICTURE: the DS monogram crest on deep green, then the real product photos
-   COLOUR and TYPE: brand dark green, cream, gold detail, sage; Playfair Display + DM Sans
-   LAYOUT: green header with name and main buttons, sticky category jumps, product grid, footer */
+/* VOICE: quiet luxury, a nutritionist's private boutique
+   IDEA: an editorial shop page, like a premium magazine's shopping column
+   PICTURE: arched portrait with a hairline champagne ring, then large product photos
+   COLOUR and TYPE: ivory ground, deep brand green ink, champagne gold hairlines; Cormorant Garamond + Jost
+   LAYOUT: slim bar with logo and categories, centred intro, airy product grid, small print */
 :root{color-scheme:light dark;
---bg:light-dark(#faf8f3,#121a16);--card:light-dark(#ffffff,#1a2520);--ink:light-dark(#1e2b25,#eef1ec);
---soft:light-dark(#5f6b64,#a8b5ad);--green:#1e4034;--sage:light-dark(#6f8467,#9db592);--gold:#b8860b;
---sand:light-dark(#f1ece3,#22302a);--line:light-dark(#e6e0d4,#2c3a33)}
+--bg:light-dark(#fbf9f5,#101714);--card:light-dark(#ffffff,#16201c);--ink:light-dark(#1e4034,#ece8df);
+--text:light-dark(#2b2b28,#e6e2d9);--soft:light-dark(#7a766d,#a7a397);--gold:light-dark(#b8975a,#cdb07a);
+--sand:light-dark(#f3eee6,#1c2622);--line:light-dark(#e9e2d5,#26312c)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-@media(max-width:600px){html{scroll-padding-top:120px}}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'DM Sans',system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased;padding-bottom:24px}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font:300 16px/1.65 Jost,system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1120px;margin:0 auto}
-.pad{padding-inline:max(4vw,14px)}
-.head{background:var(--green);color:#f6f2e8;padding-block:clamp(30px,5vw,56px) clamp(28px,4vw,44px);text-align:center}
-.crest{width:84px;height:84px;margin:0 auto 14px;display:block}
-h1{font:600 clamp(28px,4vw,40px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 6px}
-.role{margin:0 0 4px;font-weight:600;color:#d9c48f;font-size:15px}
-.tag{margin:0 auto 24px;max-width:44ch;color:#cdd8d1;font-size:15.5px}
-.links{display:grid;gap:12px;max-width:520px;margin:0 auto}
-.lk{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;border-radius:14px;text-decoration:none;font-weight:600;font-size:16px;color:#f6f2e8;border:1px solid rgba(246,242,232,.35)}
-.lk.main{background:#f6f2e8;color:var(--green);border-color:#f6f2e8}
-.lk svg{width:22px;height:22px;flex:none}
-.lk:focus-visible,.jump a:focus-visible,.card:focus-visible,.search:focus-visible,.wa:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;gap:14px;align-items:center;padding-block:10px}
-.brand{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);flex:none}
-.brand img{height:46px;width:auto;display:block}
-.brand{background:light-dark(transparent,#faf8f3);border-radius:10px;padding:2px 6px}
-.brand span{font:600 16px/1.1 'Playfair Display',Georgia,serif;display:flex;flex-direction:column}
-.brand small{font:500 12px 'DM Sans';color:var(--soft)}
-@media(max-width:600px){.bar .wrap{flex-wrap:wrap;gap:10px}.jump{flex-basis:100%}.brand img{height:40px}}
-.jump{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1}
+.pad{padding-inline:max(5vw,18px)}
+.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;gap:24px;align-items:center;padding-block:12px}
+.brand{flex:none;display:block;background:light-dark(transparent,#fbf9f5);border-radius:8px;padding:2px 6px}
+.brand img{height:44px;width:auto;display:block}
+.jump{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end}
 .jump::-webkit-scrollbar{display:none}
-.jump a{flex:none;display:flex;align-items:center;min-height:38px;padding:0 15px;border:1px solid var(--line);border-radius:999px;background:var(--card);text-decoration:none;color:var(--ink);font-weight:600;font-size:14px}
-.jump a.on{background:var(--green);color:#f6f2e8;border-color:var(--green)}
-.search{flex:0 0 170px;min-height:40px;border:1px solid var(--line);border-radius:999px;padding:0 14px;font:16px 'DM Sans';background:var(--card);color:var(--ink)}
-.shop{padding-top:20px}
-.hello{display:flex;gap:14px;align-items:center}
-.hello img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--gold)}
-.hello h2{font:600 clamp(24px,3.2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 4px}
-.hello p{margin:0;color:var(--soft);font-size:15px}
-.shop>h2{font:600 clamp(26px,3.2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 4px}
-.shop>p{margin:0;color:var(--soft);font-size:15px}
-.sec{padding-top:34px}
-.sec h3{font:500 clamp(21px,2.6vw,26px)/1.15 'Playfair Display',Georgia,serif;margin:0 0 14px;display:flex;align-items:baseline;gap:10px}
-.sec h3 small{font:500 14px 'DM Sans';color:var(--soft)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:28px 18px}
-.card{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;border-radius:16px}
-.thumb{background:var(--sand);border-radius:16px;aspect-ratio:1/1;overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
-.card:hover .thumb img{transform:scale(1.03)}
-.card h4{font:600 15px/1.3 'DM Sans';margin:2px 0 0}
-.tip{font-size:14px;line-height:1.45;color:var(--soft);margin:0;flex:1;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
-.buy{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;background:var(--green);color:#f6f2e8;font-weight:600;font-size:14px;margin-top:4px}
+.jump a{flex:none;display:flex;align-items:center;min-height:40px;text-decoration:none;color:var(--soft);font:400 12.5px Jost;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.jump a:hover,.jump a.on{color:var(--ink);border-bottom-color:var(--gold)}
+.jump a:focus-visible,.card:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.shop{padding-top:clamp(34px,6vw,64px)}
+.hello{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:520px;margin:0 auto}
+.hello>div{display:flex;flex-direction:column;align-items:inherit;gap:10px}
+.hello img{width:104px;height:130px;object-fit:cover;border-radius:52px 52px 14px 14px;outline:1px solid var(--gold);outline-offset:5px;display:block}
+.hello .kick{font:400 11.5px Jost;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:6px 0 0}
+.hello h2{font:500 clamp(34px,5vw,48px)/1.05 'Cormorant Garamond',Georgia,serif;color:var(--ink);margin:0}
+.hello h2 em{font-style:italic}
+.hello p{margin:0;color:var(--soft);font-size:16px}
+.sec{padding-top:clamp(44px,6vw,72px)}
+.sec h3{font:400 12.5px Jost;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin:0 0 22px;display:flex;align-items:center;gap:16px}
+.sec h3::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:36px 22px}
+.card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit}
+.thumb{background:var(--sand);border-radius:6px;aspect-ratio:1/1;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.card:hover .thumb img{transform:scale(1.04)}
+.card h4{font:500 20px/1.2 'Cormorant Garamond',Georgia,serif;color:var(--ink);margin:4px 0 0}
+.tip{font-size:14px;line-height:1.5;color:var(--soft);margin:0;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.buy{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:40px;font:400 12.5px Jost;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--gold)}
+.buy::after{content:"→";letter-spacing:0;transition:transform .2s}
+.card:hover .buy::after{transform:translateX(4px)}
 .empty{padding:40px 0;text-align:center;color:var(--soft)}
-.note{font-size:13px;color:var(--soft);max-width:760px;margin:44px 0 0;padding-top:18px;border-top:1px solid var(--line)}
-footer{padding-block:18px 28px;font-size:13.5px;color:var(--soft)}
-footer a{color:var(--ink);font-weight:600}
-.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:8px;min-height:52px;padding:0 18px 0 14px;border-radius:999px;background:#1f9d55;color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-.wa svg{width:24px;height:24px;flex:none}
-@media(max-width:600px){.search{flex-basis:110px}.grid{grid-template-columns:1fr 1fr;gap:18px 10px}.card h4{font-size:14px}.tip{font-size:13px}.buy{min-height:40px;font-size:13.5px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.thumb img{transition:none}.card:hover .thumb img{transform:none}}
+.note{font-size:12.5px;color:var(--soft);max-width:720px;margin:72px auto 0;padding-top:22px;border-top:1px solid var(--line);text-align:center}
+footer{padding-block:20px 40px;font:400 11.5px Jost;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);text-align:center}
+@media(max-width:600px){html{scroll-padding-top:118px}.bar .wrap{flex-wrap:wrap;gap:6px;justify-content:center}.jump{flex-basis:100%;justify-content:flex-start;gap:18px}.brand img{height:38px}.grid{grid-template-columns:1fr 1fr;gap:28px 12px}.card h4{font-size:17px}.tip{font-size:13px;-webkit-line-clamp:1}.buy{font-size:11px;letter-spacing:.14em}.shop{padding-top:22px}.hello{flex-direction:row;text-align:left;align-items:center;gap:16px;max-width:none}.hello>div{display:flex;flex-direction:column;gap:2px;align-items:flex-start}.hello img{width:68px;height:86px;border-radius:34px 34px 10px 10px;outline-offset:4px;flex:none}.hello .kick{margin:0;font-size:10.5px}.hello h2{font-size:28px}.hello p{font-size:14px;line-height:1.45}.sec{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.thumb img,.jump a{transition:none}.card:hover .thumb img{transform:none}}
 </style>
 </head>
 <body>
@@ -84,7 +69,7 @@ footer a{color:var(--ink);font-weight:600}
 
 <main class="wrap pad">
   <section class="shop" id="loja">
-    <div class="hello"><img src="img/daiane.jpg" alt="Daiane Stefano, nutricionista" width="64" height="64"><div><h2>Facilite sua rotina</h2>
+    <div class="hello"><img src="img/daiane.jpg" alt="Daiane Stefano, nutricionista"><div><p class="kick">Seleção da nutri</p><h2>Facilite sua <em>rotina</em></h2>
     <p>Oi, eu sou a Daiane, nutricionista. Separei o que facilita a rotina de quem quer comer bem.</p></div></div>
     <div id="list"></div>
   </section>
@@ -128,7 +113,7 @@ const render=()=>{
  }).join('');
  list.innerHTML=html||'<p class="empty">Nenhum produto encontrado. Tente outra palavra.</p>';
  if(io)io.disconnect();
- io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){for(const a of jump.children)a.classList.toggle('on',a.dataset.c===e.target.id);const on=jump.querySelector('.on');if(on)jump.scrollTo({left:on.offsetLeft-14,behavior:'smooth'})}},{rootMargin:'-80px 0px -60% 0px'});
+ io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){for(const a of jump.children)a.classList.toggle('on',a.dataset.c===e.target.id);const on=jump.querySelector('.on');if(on)jump.scrollTo({left:on.offsetLeft-jump.offsetLeft-14,behavior:'smooth'})}},{rootMargin:'-80px 0px -60% 0px'});
  list.querySelectorAll('.sec').forEach(s=>io.observe(s));
 };
 render();
