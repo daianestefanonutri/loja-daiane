@@ -47,6 +47,10 @@ h1{font:600 clamp(28px,4vw,40px)/1.1 'Playfair Display',Georgia,serif;margin:0 0
 .jump a.on{background:var(--green);color:#f6f2e8;border-color:var(--green)}
 .search{flex:0 0 170px;min-height:40px;border:1px solid var(--line);border-radius:999px;padding:0 14px;font:16px 'DM Sans';background:var(--card);color:var(--ink)}
 .shop{padding-top:20px}
+.hello{display:flex;gap:14px;align-items:center}
+.hello img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--gold)}
+.hello h2{font:600 clamp(24px,3.2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 4px}
+.hello p{margin:0;color:var(--soft);font-size:15px}
 .shop>h2{font:600 clamp(26px,3.2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 4px}
 .shop>p{margin:0;color:var(--soft);font-size:15px}
 .sec{padding-top:28px}
@@ -80,8 +84,8 @@ footer a{color:var(--ink);font-weight:600}
 
 <main class="wrap pad">
   <section class="shop" id="loja">
-    <h2>Facilite sua rotina</h2>
-    <p>Produtos que ajudam a organizar a alimentação no dia a dia. Toque no produto para ir direto à loja.</p>
+    <div class="hello"><img src="img/daiane.jpg" alt="Daiane Stefano, nutricionista" width="64" height="64"><div><h2>Facilite sua rotina</h2>
+    <p>Oi, eu sou a Daiane, nutricionista. Reuni aqui produtos que ajudam a organizar a alimentação no dia a dia. Toque no produto para ir direto à loja.</p></div></div>
     <div id="list"></div>
   </section>
   <p class="note">Declaração de conflito de interesses: os produtos desta página têm links de afiliado. Ao comprar por eles, posso receber uma comissão da loja, sem custo adicional para você. Nenhum produto substitui orientação nutricional individual. Preços e disponibilidade são definidos por cada loja e podem mudar.</p>
