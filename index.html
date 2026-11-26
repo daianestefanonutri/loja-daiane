@@ -53,16 +53,16 @@ h1{font:600 clamp(28px,4vw,40px)/1.1 'Playfair Display',Georgia,serif;margin:0 0
 .hello p{margin:0;color:var(--soft);font-size:15px}
 .shop>h2{font:600 clamp(26px,3.2vw,34px)/1.1 'Playfair Display',Georgia,serif;margin:0 0 4px}
 .shop>p{margin:0;color:var(--soft);font-size:15px}
-.sec{padding-top:28px}
+.sec{padding-top:34px}
 .sec h3{font:500 clamp(21px,2.6vw,26px)/1.15 'Playfair Display',Georgia,serif;margin:0 0 14px;display:flex;align-items:baseline;gap:10px}
 .sec h3 small{font:500 14px 'DM Sans';color:var(--soft)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:22px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:28px 18px}
 .card{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit;border-radius:16px}
 .thumb{background:var(--sand);border-radius:16px;aspect-ratio:1/1;overflow:hidden}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
 .card:hover .thumb img{transform:scale(1.03)}
 .card h4{font:600 15px/1.3 'DM Sans';margin:2px 0 0}
-.tip{font-size:14px;line-height:1.45;color:var(--soft);margin:0;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tip{font-size:14px;line-height:1.45;color:var(--soft);margin:0;flex:1;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 .buy{display:flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;background:var(--green);color:#f6f2e8;font-weight:600;font-size:14px;margin-top:4px}
 .empty{padding:40px 0;text-align:center;color:var(--soft)}
 .note{font-size:13px;color:var(--soft);max-width:760px;margin:44px 0 0;padding-top:18px;border-top:1px solid var(--line)}
@@ -85,7 +85,7 @@ footer a{color:var(--ink);font-weight:600}
 <main class="wrap pad">
   <section class="shop" id="loja">
     <div class="hello"><img src="img/daiane.jpg" alt="Daiane Stefano, nutricionista" width="64" height="64"><div><h2>Facilite sua rotina</h2>
-    <p>Oi, eu sou a Daiane, nutricionista. Reuni aqui produtos que ajudam a organizar a alimentação no dia a dia. Toque no produto para ir direto à loja.</p></div></div>
+    <p>Oi, eu sou a Daiane, nutricionista. Separei o que facilita a rotina de quem quer comer bem.</p></div></div>
     <div id="list"></div>
   </section>
   <p class="note">Declaração de conflito de interesses: os produtos desta página têm links de afiliado. Ao comprar por eles, posso receber uma comissão da loja, sem custo adicional para você. Nenhum produto substitui orientação nutricional individual. Preços e disponibilidade são definidos por cada loja e podem mudar.</p>
@@ -124,7 +124,7 @@ let io;
 const render=()=>{
  const html=used.map(c=>{
   const items=P.filter(x=>x.c===c.id);
-  return items.length?`<section class="sec" id="${c.id}"><h3>${esc(c.name)}<small>${items.length}</small></h3><div class="grid">${items.map(card).join('')}</div></section>`:'';
+  return items.length?`<section class="sec" id="${c.id}"><h3>${esc(c.name)}</h3><div class="grid">${items.map(card).join('')}</div></section>`:'';
  }).join('');
  list.innerHTML=html||'<p class="empty">Nenhum produto encontrado. Tente outra palavra.</p>';
  if(io)io.disconnect();
